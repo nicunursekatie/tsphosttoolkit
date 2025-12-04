@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import logo from './assets/logo.png';
 
 const HostOnboarding = () => {
   const [expandedSection, setExpandedSection] = useState(null);
+  const [logoError, setLogoError] = useState(false);
 
   const toggleSection = (section) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -209,7 +209,19 @@ const HostOnboarding = () => {
       <header className="bg-gradient-to-br from-teal to-teal-dark text-white">
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
           <div className="flex items-center gap-3 mb-6">
-            <img src={logo} alt="The Sandwich Project" className="h-12 md:h-16" />
+            {!logoError ? (
+              <img 
+                src="/logo.png" 
+                alt="The Sandwich Project" 
+                className="h-12 md:h-16" 
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <>
+                <span className="text-4xl">🥪</span>
+                <span className="text-gold font-semibold tracking-wide uppercase text-sm">The Sandwich Project</span>
+              </>
+            )}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Host Onboarding Guide
