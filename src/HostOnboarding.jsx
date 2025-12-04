@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from './assets/logo.png';
 
 const HostOnboarding = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -56,7 +57,6 @@ const HostOnboarding = () => {
             <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-300">
               <h4 className="font-semibold text-gray-700 mb-2">What You Don't Do</h4>
               <ul className="space-y-1 text-sm text-gray-600">
-                <li>• Make sandwiches yourself (unless you want to)</li>
                 <li>• Deliver sandwiches</li>
                 <li>• Handle money or donations</li>
                 <li>• Manage other volunteers</li>
@@ -209,8 +209,7 @@ const HostOnboarding = () => {
       <header className="bg-gradient-to-br from-teal to-teal-dark text-white">
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-4xl">🥪</span>
-            <span className="text-gold font-semibold tracking-wide uppercase text-sm">The Sandwich Project</span>
+            <img src={logo} alt="The Sandwich Project" className="h-12 md:h-16" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Host Onboarding Guide
